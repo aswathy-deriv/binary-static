@@ -1,30 +1,23 @@
 import React from 'react';
 
-const Column = ({ url, target, image, header, text }) => (
+const Column = ({
+    url,
+    target,
+    image,
+    header,
+    text,
+}) => (
     <div className='gr-4 gr-12-m gr-no-gutter center-text-m'>
         <div className='gr-6 gr-padding-10 gr-centered-m'>
-            {url && (
-                <a
-                    href={`${url}`}
-                    rel={/^http/.test(url) ? 'noopener noreferrer' : undefined}
-                    target={target || undefined}
-                >
-                    <img
-                        className='responsive'
-                        src={it.url_for(`images/pages/partners/${image}.svg`)}
-                    />
+            { url &&
+                <a href={`${url}`} rel={/^http/.test(url) ? 'noopener noreferrer' : undefined} target={target || undefined}>
+                    <img className='responsive' src={it.url_for(`images/pages/partners/${image}.svg`)} />
                 </a>
-            )}
+            }
         </div>
         <div className='gr-12'>
             <h4>
-                <a
-                    href={`${url}`}
-                    rel={/^http/.test(url) ? 'noopener noreferrer' : undefined}
-                    target={target || undefined}
-                >
-                    {header}
-                </a>
+                <a href={`${url}`} rel={/^http/.test(url) ? 'noopener noreferrer' : undefined} target={target || undefined}>{header}</a>
             </h4>
             <p>{text}</p>
         </div>
@@ -36,12 +29,7 @@ const Partners = () => (
         <div className='container'>
             <div className='static_full'>
                 <h1>{it.L('Partners')}</h1>
-                <p>
-                    {it.L(
-                        '[_1] provides business partnership services via the following programs.',
-                        it.website_name
-                    )}
-                </p>
+                <p>{it.L('[_1] provides business partnership services via the following programs.', it.website_name)}</p>
             </div>
 
             <div className='gr-row gr-clear'>
@@ -56,19 +44,14 @@ const Partners = () => (
                     target='_blank'
                     image='api'
                     header={it.L('API')}
-                    text={it.L(
-                        'Develop your own trading application with our APIs.'
-                    )}
+                    text={it.L('Develop your own trading application with our APIs.')}
                 />
 
                 <Column
                     url={it.url_for('open-source-projects')}
                     image='open-source-venture'
                     header={it.L('Open Source')}
-                    text={it.L(
-                        "Contribute to [_1]'s open-source projects.",
-                        it.website_name
-                    )}
+                    text={it.L('Contribute to [_1]\'s open-source projects.', it.website_name) }
                 />
             </div>
 
@@ -84,9 +67,7 @@ const Partners = () => (
                     url={it.url_for('security-testing')}
                     image='tester'
                     header={it.L('Security Testing')}
-                    text={it.L(
-                        'Earn money for any verifiable errors that you find.'
-                    )}
+                    text={it.L('Earn money for any verifiable errors that you find.')}
                 />
             </div>
         </div>
